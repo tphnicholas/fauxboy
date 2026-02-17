@@ -1,0 +1,5 @@
+.nix_local/
+.direnv/
+.envrc
+.idea/
+build/

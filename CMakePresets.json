@@ -1,0 +1,75 @@
+{
+  "version": 3,
+  "cmakeMinimumRequired": {
+    "major": 3,
+    "minor": 21,
+    "patch": 0
+  },
+  "configurePresets": [
+    {
+      "name": "build-shared",
+      "hidden": true,
+      "cacheVariables": {
+        "BUILD_SHARED_LIBS": "ON"
+      }
+    },
+    {
+      "name": "build-tests",
+      "hidden": true,
+      "cacheVariables": {
+        "BUILD_TESTING": "ON"
+      }
+    },
+    {
+      "name": "gcc-base",
+      "hidden": true,
+      "binaryDir": "build/${presetName}",
+      "cacheVariables": {
+        "CMAKE_CXX_COMPILER": "g++",
+        "CMAKE_CXX_STANDARD": "23",
+        "CMAKE_CXX_STANDARD_REQUIRED": "ON",
+        "CMAKE_CXX_EXTENSIONS": "OFF"
+      },
+      "cmakeExecutable": "cmake",
+      "generator": "Ninja"
+    },
+    {
+      "name": "gcc-debug",
+      "inherits": [
+        "gcc-base",
+        "build-shared"
+      ],
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug",
+        "CMAKE_CXX_FLAGS": "-O0 -ggdb3 -Wall -Wextra -Wpedantic -pedantic-errors"
+      }
+    },
+    {
+      "name": "gcc-debug-sanitizers",
+      "inherits": [
+        "gcc-base",
+        "build-shared"
+      ],
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug",
+        "CMAKE_EXE_LINKER_FLAGS": "-fsanitize=address,undefined",
+        "CMAKE_SHARED_LINKER_FLAGS": "-fsanitize=address,undefined",
+        "CMAKE_CXX_FLAGS": "-fsanitize=address,undefined -O0 -ggdb3 -Wall -Wextra -Wpedantic -pedantic-errors"
+      }
+    },
+    {
+      "name": "gcc-debug-tests",
+      "inherits": [
+        "gcc-debug",
+        "build-tests"
+      ]
+    },
+    {
+      "name": "gcc-debug-sanitizers-tests",
+      "inherits": [
+        "gcc-debug-sanitizers",
+        "build-tests"
+      ]
+    }
+  ]
+}
