@@ -60,25 +60,26 @@ using ShortRegister = Register<std::uint16_t>;
 class RegisterPairView
 {
 private:
-    ByteRegister* lower_;
     ByteRegister* upper_;
+    ByteRegister* lower_;
 
 public:
-    RegisterPairView(ByteRegister* lower, ByteRegister* upper) noexcept
-        : lower_(lower),
-          upper_(upper)
+    RegisterPairView(ByteRegister* upper, ByteRegister* lower) noexcept
+        : upper_(upper),
+          lower_(lower)
+
     {
-        assert(lower);
         assert(upper);
+        assert(lower);
     }
 
-    [[nodiscard]] decltype(auto) lower(this auto&& self) noexcept { return *(self.lower_); }
     [[nodiscard]] decltype(auto) upper(this auto&& self) noexcept { return *(self.upper_); }
+    [[nodiscard]] decltype(auto) lower(this auto&& self) noexcept { return *(self.lower_); }
 
     [[nodiscard]] virtual std::uint16_t operator()() const noexcept
     {
-        auto const lo = lower()();
         auto const hi = upper()();
+        auto const lo = lower()();
         return ((hi << 8) | lo);
     }
 };
