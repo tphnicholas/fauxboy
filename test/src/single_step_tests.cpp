@@ -8,6 +8,7 @@
 #include <format>
 #include <fstream>
 #include <stdexcept>
+#include <string>
 
 #include <simdjson.h>
 
@@ -19,6 +20,15 @@
 #include "config.hpp"
 
 using namespace fxb;
+
+namespace Catch
+{
+template <>
+struct StringMaker<Address>
+{
+    static std::string convert(Address const& address) { return std::format("Address({})", address.value); }
+};
+} // namespace Catch
 
 namespace
 {

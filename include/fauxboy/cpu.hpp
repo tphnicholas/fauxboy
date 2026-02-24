@@ -3,6 +3,7 @@
 
 #include <cstdint>
 #include <functional>
+#include <stdexcept>
 
 #include "address.hpp"
 #include "register.hpp"
@@ -33,6 +34,17 @@ private:
 
 public:
     explicit OpcodeNotImplementedException(std::uint16_t extendedOpcode);
+
+    [[nodiscard]] std::uint16_t opcode() const noexcept { return extendedOpcode_; }
+};
+
+class IllegalOpcodeException : public std::runtime_error
+{
+private:
+    std::uint16_t extendedOpcode_;
+
+public:
+    explicit IllegalOpcodeException(std::uint16_t extendedOpcode);
 
     [[nodiscard]] std::uint16_t opcode() const noexcept { return extendedOpcode_; }
 };
@@ -80,6 +92,49 @@ private:
     void executeExtended(std::uint16_t opcode);
 
     void tick();
+
+    void INC(ByteRegister& reg) noexcept;
+    void INC(ShortRegister& reg) noexcept;
+    void INC(RegisterPairView regPair) noexcept;
+
+    void DEC(ByteRegister& reg) noexcept;
+    void DEC(ShortRegister& reg) noexcept;
+    void DEC(RegisterPairView regPair) noexcept;
+
+    void ADD(ByteRegister& reg, std::uint8_t shift) noexcept;
+    void ADD(RegisterPairView regPair, std::uint16_t shift) noexcept;
+
+    void ADC(ByteRegister& reg, std::uint8_t shift) noexcept;
+
+    void SUB(ByteRegister& reg, std::uint8_t shift) noexcept;
+
+    void SBC(ByteRegister& reg, std::uint8_t shift) noexcept;
+
+    void AND(ByteRegister& reg, std::uint8_t value) noexcept;
+
+    void XOR(ByteRegister& reg, std::uint8_t value) noexcept;
+
+    void OR(ByteRegister& reg, std::uint8_t value) noexcept;
+
+    void CP(ByteRegister& reg, std::uint8_t shift) noexcept;
+
+    void JR(bool shouldBranch) noexcept;
+    void JR() noexcept;
+
+    void RET() noexcept;
+    void RET(bool shouldBranch) noexcept;
+
+    void POP(RegisterPairView regPair) noexcept;
+
+    void JP(bool shouldBranch) noexcept;
+    void JP() noexcept;
+
+    void CALL(bool shouldBranch) noexcept;
+    void CALL() noexcept;
+
+    void PUSH(RegisterPairView regPair) noexcept;
+
+    void RST(std::uint8_t value) noexcept;
 
 public:
     explicit Cpu(Bus* bus) noexcept;

@@ -33,6 +33,9 @@ public:
     [[nodiscard]] std::uint8_t lower() const noexcept { return getLower(value); }
     [[nodiscard]] std::uint8_t upper() const noexcept { return getUpper(value); }
 
+    void setLower(std::uint8_t byte) noexcept { fxb::setLower(value, byte); }
+    void setUpper(std::uint8_t byte) noexcept { fxb::setUpper(value, byte); }
+
     [[nodiscard]] T operator()() const noexcept { return value; }
 
     Register& operator=(T newValue) noexcept
@@ -108,6 +111,8 @@ public:
         auto& value     = Register<U>::value;
         value           = ((value & ~flag) | (flag * shouldSet));
     }
+
+    void toggleFlag(T rawFlag) noexcept { setFlag(rawFlag, !isSet(rawFlag)); }
 
     [[nodiscard]] bool isSet(T rawFlag) const noexcept
     {
