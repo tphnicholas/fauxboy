@@ -70,6 +70,23 @@
         "gcc-debug-sanitizers",
         "build-tests"
       ]
+    },
+    {
+      "name": "gcc-release",
+      "inherits": [
+        "gcc-base"
+      ],
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release",
+        "CMAKE_CXX_FLAGS": "-O2 -g -Wall -Wextra -Wpedantic -pedantic-errors"
+      }
+    },
+    {
+      "name": "gcc-release-tests",
+      "inherits": [
+        "gcc-release",
+        "build-tests"
+      ]
     }
   ]
 }
