@@ -270,7 +270,7 @@ TEST_CASE_PERSISTENT_FIXTURE(SingleStepTestsFixture, "SingleStepTests", "[.][sin
             [this, &cycleCount](Cpu const*)
             {
                 auto const& lastMemoryAccess = bus.getLastMemoryAccess();
-                auto const& cycle            = testData.cycles[cycleCount++];
+                auto const& cycle            = testData.cycles.at(cycleCount++);
 
                 if (cycle.accessMode == "r-m")
                 {
