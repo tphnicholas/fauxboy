@@ -33,6 +33,8 @@
           };
         };
 
+        simdjson = pkgs.simdjson;
+
         filesystem_pkgs = []
           ++ lib.optionals pkgs.stdenv.isLinux [ pkgs.inotify-tools ]
           ++ lib.optionals pkgs.stdenv.isDarwin (with pkgs.darwin.apple_sdk.frameworks; [ CoreFoundation CoreServices ]);
@@ -48,6 +50,7 @@
           
           buildInputs = [
             catch2
+            simdjson
           ] ++ filesystem_pkgs;
 
           # Environment variables

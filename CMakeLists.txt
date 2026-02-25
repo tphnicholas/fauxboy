@@ -12,8 +12,14 @@ include(cmake/Options.cmake)
 add_library(
     fauxboy_lib ${FAUXBOY_BUILD_TYPE}
     # include
+    include/fauxboy/cpu.hpp
+    include/fauxboy/bus.hpp
+    include/fauxboy/address.hpp
+    include/fauxboy/util.hpp
+    include/fauxboy/register.hpp
     # src
-    src/fauxboy.cpp
+    src/cpu.cpp
+    src/bus.cpp
 )
 
 add_library(fauxboy::fauxboy ALIAS fauxboy_lib)

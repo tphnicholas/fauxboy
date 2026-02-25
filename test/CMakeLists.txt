@@ -12,11 +12,16 @@ endif ()
 
 find_package(Catch2 3 REQUIRED)
 
+find_package(simdjson REQUIRED)
+
 add_executable(
     unit_tests
     # include
+    include/config.hpp
     # src
+    src/main.cpp
     src/tests.cpp
+    src/single_step_tests.cpp
 )
 
 set_target_properties(
@@ -37,7 +42,8 @@ target_include_directories(
 target_link_libraries(
     unit_tests
     PRIVATE fauxboy::fauxboy
-    PRIVATE Catch2::Catch2WithMain
+    PRIVATE Catch2::Catch2
+    PRIVATE simdjson
 )
 
 include(CTest)
