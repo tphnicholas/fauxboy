@@ -116,7 +116,7 @@ private:
 
     void OR(ByteRegister& reg, std::uint8_t value) noexcept;
 
-    void CP(ByteRegister& reg, std::uint8_t shift) noexcept;
+    void CP(ByteRegister const& reg, std::uint8_t shift) noexcept;
 
     void JR(bool shouldBranch) noexcept;
     void JR() noexcept;

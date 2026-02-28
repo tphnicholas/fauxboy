@@ -1591,9 +1591,9 @@ void Cpu::ADD(RegisterPairView regPair, std::uint16_t shift) noexcept
     std::uint16_t const oldValue = regPair();
     std::uint32_t const result   = (oldValue + shift);
 
-    HL_.lower() = (result & 0xFF);
+    regPair.lower() = (result & 0xFF);
     tick();
-    HL_.upper() = ((result >> 8) & 0xFF);
+    regPair.upper() = ((result >> 8) & 0xFF);
     F_.setFlag(Flag::NEGATIVE, false);
     F_.setFlag(Flag::HALF_CARRY, (((oldValue & 0x0FFF) + (shift & 0x0FFF)) & 0x1000) != 0);
     F_.setFlag(Flag::CARRY, (result & 0x10000) != 0);
@@ -1671,7 +1671,7 @@ void Cpu::OR(ByteRegister& reg, std::uint8_t value) noexcept
     F_.setFlag(Flag::CARRY, false);
 }
 
-void Cpu::CP(ByteRegister& reg, std::uint8_t shift) noexcept
+void Cpu::CP(ByteRegister const& reg, std::uint8_t shift) noexcept
 {
     std::uint8_t const oldValue = reg();
     std::uint8_t const result   = (oldValue - shift);
