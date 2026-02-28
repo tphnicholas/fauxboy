@@ -1503,6 +1503,1286 @@ void Cpu::executeExtended(std::uint16_t opcode)
 {
     switch (opcode)
     {
+        case 0xCB00:
+        {
+            RLC(B_);
+            break;
+        }
+        case 0xCB01:
+        {
+            RLC(C_);
+            break;
+        }
+        case 0xCB02:
+        {
+            RLC(D_);
+            break;
+        }
+        case 0xCB03:
+        {
+            RLC(E_);
+            break;
+        }
+        case 0xCB04:
+        {
+            RLC(H_);
+            break;
+        }
+        case 0xCB05:
+        {
+            RLC(L_);
+            break;
+        }
+        case 0xCB06:
+        {
+            RLC(Address(HL()));
+            break;
+        }
+        case 0xCB07:
+        {
+            RLC(A_);
+            break;
+        }
+        case 0xCB08:
+        {
+            RRC(B_);
+            break;
+        }
+        case 0xCB09:
+        {
+            RRC(C_);
+            break;
+        }
+        case 0xCB0A:
+        {
+            RRC(D_);
+            break;
+        }
+        case 0xCB0B:
+        {
+            RRC(E_);
+            break;
+        }
+        case 0xCB0C:
+        {
+            RRC(H_);
+            break;
+        }
+        case 0xCB0D:
+        {
+            RRC(L_);
+            break;
+        }
+        case 0xCB0E:
+        {
+            RRC(Address(HL()));
+            break;
+        }
+        case 0xCB0F:
+        {
+            RRC(A_);
+            break;
+        }
+        case 0xCB10:
+        {
+            RL(B_);
+            break;
+        }
+        case 0xCB11:
+        {
+            RL(C_);
+            break;
+        }
+        case 0xCB12:
+        {
+            RL(D_);
+            break;
+        }
+        case 0xCB13:
+        {
+            RL(E_);
+            break;
+        }
+        case 0xCB14:
+        {
+            RL(H_);
+            break;
+        }
+        case 0xCB15:
+        {
+            RL(L_);
+            break;
+        }
+        case 0xCB16:
+        {
+            RL(Address(HL()));
+            break;
+        }
+        case 0xCB17:
+        {
+            RL(A_);
+            break;
+        }
+        case 0xCB18:
+        {
+            RR(B_);
+            break;
+        }
+        case 0xCB19:
+        {
+            RR(C_);
+            break;
+        }
+        case 0xCB1A:
+        {
+            RR(D_);
+            break;
+        }
+        case 0xCB1B:
+        {
+            RR(E_);
+            break;
+        }
+        case 0xCB1C:
+        {
+            RR(H_);
+            break;
+        }
+        case 0xCB1D:
+        {
+            RR(L_);
+            break;
+        }
+        case 0xCB1E:
+        {
+            RR(Address(HL()));
+            break;
+        }
+        case 0xCB1F:
+        {
+            RR(A_);
+            break;
+        }
+        case 0xCB20:
+        {
+            SLA(B_);
+            break;
+        }
+        case 0xCB21:
+        {
+            SLA(C_);
+            break;
+        }
+        case 0xCB22:
+        {
+            SLA(D_);
+            break;
+        }
+        case 0xCB23:
+        {
+            SLA(E_);
+            break;
+        }
+        case 0xCB24:
+        {
+            SLA(H_);
+            break;
+        }
+        case 0xCB25:
+        {
+            SLA(L_);
+            break;
+        }
+        case 0xCB26:
+        {
+            SLA(Address(HL()));
+            break;
+        }
+        case 0xCB27:
+        {
+            SLA(A_);
+            break;
+        }
+        case 0xCB28:
+        {
+            SRA(B_);
+            break;
+        }
+        case 0xCB29:
+        {
+            SRA(C_);
+            break;
+        }
+        case 0xCB2A:
+        {
+            SRA(D_);
+            break;
+        }
+        case 0xCB2B:
+        {
+            SRA(E_);
+            break;
+        }
+        case 0xCB2C:
+        {
+            SRA(H_);
+            break;
+        }
+        case 0xCB2D:
+        {
+            SRA(L_);
+            break;
+        }
+        case 0xCB2E:
+        {
+            SRA(Address(HL()));
+            break;
+        }
+        case 0xCB2F:
+        {
+            SRA(A_);
+            break;
+        }
+        case 0xCB30:
+        {
+            SWAP(B_);
+            break;
+        }
+        case 0xCB31:
+        {
+            SWAP(C_);
+            break;
+        }
+        case 0xCB32:
+        {
+            SWAP(D_);
+            break;
+        }
+        case 0xCB33:
+        {
+            SWAP(E_);
+            break;
+        }
+        case 0xCB34:
+        {
+            SWAP(H_);
+            break;
+        }
+        case 0xCB35:
+        {
+            SWAP(L_);
+            break;
+        }
+        case 0xCB36:
+        {
+            SWAP(Address(HL()));
+            break;
+        }
+        case 0xCB37:
+        {
+            SWAP(A_);
+            break;
+        }
+        case 0xCB38:
+        {
+            SRL(B_);
+            break;
+        }
+        case 0xCB39:
+        {
+            SRL(C_);
+            break;
+        }
+        case 0xCB3A:
+        {
+            SRL(D_);
+            break;
+        }
+        case 0xCB3B:
+        {
+            SRL(E_);
+            break;
+        }
+        case 0xCB3C:
+        {
+            SRL(H_);
+            break;
+        }
+        case 0xCB3D:
+        {
+            SRL(L_);
+            break;
+        }
+        case 0xCB3E:
+        {
+            SRL(Address(HL()));
+            break;
+        }
+        case 0xCB3F:
+        {
+            SRL(A_);
+            break;
+        }
+        case 0xCB40:
+        {
+            BIT(0, B_);
+            break;
+        }
+        case 0xCB41:
+        {
+            BIT(0, C_);
+            break;
+        }
+        case 0xCB42:
+        {
+            BIT(0, D_);
+            break;
+        }
+        case 0xCB43:
+        {
+            BIT(0, E_);
+            break;
+        }
+        case 0xCB44:
+        {
+            BIT(0, H_);
+            break;
+        }
+        case 0xCB45:
+        {
+            BIT(0, L_);
+            break;
+        }
+        case 0xCB46:
+        {
+            BIT(0, Address(HL()));
+            break;
+        }
+        case 0xCB47:
+        {
+            BIT(0, A_);
+            break;
+        }
+        case 0xCB48:
+        {
+            BIT(1, B_);
+            break;
+        }
+        case 0xCB49:
+        {
+            BIT(1, C_);
+            break;
+        }
+        case 0xCB4A:
+        {
+            BIT(1, D_);
+            break;
+        }
+        case 0xCB4B:
+        {
+            BIT(1, E_);
+            break;
+        }
+        case 0xCB4C:
+        {
+            BIT(1, H_);
+            break;
+        }
+        case 0xCB4D:
+        {
+            BIT(1, L_);
+            break;
+        }
+        case 0xCB4E:
+        {
+            BIT(1, Address(HL()));
+            break;
+        }
+        case 0xCB4F:
+        {
+            BIT(1, A_);
+            break;
+        }
+        case 0xCB50:
+        {
+            BIT(2, B_);
+            break;
+        }
+        case 0xCB51:
+        {
+            BIT(2, C_);
+            break;
+        }
+        case 0xCB52:
+        {
+            BIT(2, D_);
+            break;
+        }
+        case 0xCB53:
+        {
+            BIT(2, E_);
+            break;
+        }
+        case 0xCB54:
+        {
+            BIT(2, H_);
+            break;
+        }
+        case 0xCB55:
+        {
+            BIT(2, L_);
+            break;
+        }
+        case 0xCB56:
+        {
+            BIT(2, Address(HL()));
+            break;
+        }
+        case 0xCB57:
+        {
+            BIT(2, A_);
+            break;
+        }
+        case 0xCB58:
+        {
+            BIT(3, B_);
+            break;
+        }
+        case 0xCB59:
+        {
+            BIT(3, C_);
+            break;
+        }
+        case 0xCB5A:
+        {
+            BIT(3, D_);
+            break;
+        }
+        case 0xCB5B:
+        {
+            BIT(3, E_);
+            break;
+        }
+        case 0xCB5C:
+        {
+            BIT(3, H_);
+            break;
+        }
+        case 0xCB5D:
+        {
+            BIT(3, L_);
+            break;
+        }
+        case 0xCB5E:
+        {
+            BIT(3, Address(HL()));
+            break;
+        }
+        case 0xCB5F:
+        {
+            BIT(3, A_);
+            break;
+        }
+        case 0xCB60:
+        {
+            BIT(4, B_);
+            break;
+        }
+        case 0xCB61:
+        {
+            BIT(4, C_);
+            break;
+        }
+        case 0xCB62:
+        {
+            BIT(4, D_);
+            break;
+        }
+        case 0xCB63:
+        {
+            BIT(4, E_);
+            break;
+        }
+        case 0xCB64:
+        {
+            BIT(4, H_);
+            break;
+        }
+        case 0xCB65:
+        {
+            BIT(4, L_);
+            break;
+        }
+        case 0xCB66:
+        {
+            BIT(4, Address(HL()));
+            break;
+        }
+        case 0xCB67:
+        {
+            BIT(4, A_);
+            break;
+        }
+        case 0xCB68:
+        {
+            BIT(5, B_);
+            break;
+        }
+        case 0xCB69:
+        {
+            BIT(5, C_);
+            break;
+        }
+        case 0xCB6A:
+        {
+            BIT(5, D_);
+            break;
+        }
+        case 0xCB6B:
+        {
+            BIT(5, E_);
+            break;
+        }
+        case 0xCB6C:
+        {
+            BIT(5, H_);
+            break;
+        }
+        case 0xCB6D:
+        {
+            BIT(5, L_);
+            break;
+        }
+        case 0xCB6E:
+        {
+            BIT(5, Address(HL()));
+            break;
+        }
+        case 0xCB6F:
+        {
+            BIT(5, A_);
+            break;
+        }
+        case 0xCB70:
+        {
+            BIT(6, B_);
+            break;
+        }
+        case 0xCB71:
+        {
+            BIT(6, C_);
+            break;
+        }
+        case 0xCB72:
+        {
+            BIT(6, D_);
+            break;
+        }
+        case 0xCB73:
+        {
+            BIT(6, E_);
+            break;
+        }
+        case 0xCB74:
+        {
+            BIT(6, H_);
+            break;
+        }
+        case 0xCB75:
+        {
+            BIT(6, L_);
+            break;
+        }
+        case 0xCB76:
+        {
+            BIT(6, Address(HL()));
+            break;
+        }
+        case 0xCB77:
+        {
+            BIT(6, A_);
+            break;
+        }
+        case 0xCB78:
+        {
+            BIT(7, B_);
+            break;
+        }
+        case 0xCB79:
+        {
+            BIT(7, C_);
+            break;
+        }
+        case 0xCB7A:
+        {
+            BIT(7, D_);
+            break;
+        }
+        case 0xCB7B:
+        {
+            BIT(7, E_);
+            break;
+        }
+        case 0xCB7C:
+        {
+            BIT(7, H_);
+            break;
+        }
+        case 0xCB7D:
+        {
+            BIT(7, L_);
+            break;
+        }
+        case 0xCB7E:
+        {
+            BIT(7, Address(HL()));
+            break;
+        }
+        case 0xCB7F:
+        {
+            BIT(7, A_);
+            break;
+        }
+        case 0xCB80:
+        {
+            RES(0, B_);
+            break;
+        }
+        case 0xCB81:
+        {
+            RES(0, C_);
+            break;
+        }
+        case 0xCB82:
+        {
+            RES(0, D_);
+            break;
+        }
+        case 0xCB83:
+        {
+            RES(0, E_);
+            break;
+        }
+        case 0xCB84:
+        {
+            RES(0, H_);
+            break;
+        }
+        case 0xCB85:
+        {
+            RES(0, L_);
+            break;
+        }
+        case 0xCB86:
+        {
+            RES(0, Address(HL()));
+            break;
+        }
+        case 0xCB87:
+        {
+            RES(0, A_);
+            break;
+        }
+        case 0xCB88:
+        {
+            RES(1, B_);
+            break;
+        }
+        case 0xCB89:
+        {
+            RES(1, C_);
+            break;
+        }
+        case 0xCB8A:
+        {
+            RES(1, D_);
+            break;
+        }
+        case 0xCB8B:
+        {
+            RES(1, E_);
+            break;
+        }
+        case 0xCB8C:
+        {
+            RES(1, H_);
+            break;
+        }
+        case 0xCB8D:
+        {
+            RES(1, L_);
+            break;
+        }
+        case 0xCB8E:
+        {
+            RES(1, Address(HL()));
+            break;
+        }
+        case 0xCB8F:
+        {
+            RES(1, A_);
+            break;
+        }
+        case 0xCB90:
+        {
+            RES(2, B_);
+            break;
+        }
+        case 0xCB91:
+        {
+            RES(2, C_);
+            break;
+        }
+        case 0xCB92:
+        {
+            RES(2, D_);
+            break;
+        }
+        case 0xCB93:
+        {
+            RES(2, E_);
+            break;
+        }
+        case 0xCB94:
+        {
+            RES(2, H_);
+            break;
+        }
+        case 0xCB95:
+        {
+            RES(2, L_);
+            break;
+        }
+        case 0xCB96:
+        {
+            RES(2, Address(HL()));
+            break;
+        }
+        case 0xCB97:
+        {
+            RES(2, A_);
+            break;
+        }
+        case 0xCB98:
+        {
+            RES(3, B_);
+            break;
+        }
+        case 0xCB99:
+        {
+            RES(3, C_);
+            break;
+        }
+        case 0xCB9A:
+        {
+            RES(3, D_);
+            break;
+        }
+        case 0xCB9B:
+        {
+            RES(3, E_);
+            break;
+        }
+        case 0xCB9C:
+        {
+            RES(3, H_);
+            break;
+        }
+        case 0xCB9D:
+        {
+            RES(3, L_);
+            break;
+        }
+        case 0xCB9E:
+        {
+            RES(3, Address(HL()));
+            break;
+        }
+        case 0xCB9F:
+        {
+            RES(3, A_);
+            break;
+        }
+        case 0xCBA0:
+        {
+            RES(4, B_);
+            break;
+        }
+        case 0xCBA1:
+        {
+            RES(4, C_);
+            break;
+        }
+        case 0xCBA2:
+        {
+            RES(4, D_);
+            break;
+        }
+        case 0xCBA3:
+        {
+            RES(4, E_);
+            break;
+        }
+        case 0xCBA4:
+        {
+            RES(4, H_);
+            break;
+        }
+        case 0xCBA5:
+        {
+            RES(4, L_);
+            break;
+        }
+        case 0xCBA6:
+        {
+            RES(4, Address(HL()));
+            break;
+        }
+        case 0xCBA7:
+        {
+            RES(4, A_);
+            break;
+        }
+        case 0xCBA8:
+        {
+            RES(5, B_);
+            break;
+        }
+        case 0xCBA9:
+        {
+            RES(5, C_);
+            break;
+        }
+        case 0xCBAA:
+        {
+            RES(5, D_);
+            break;
+        }
+        case 0xCBAB:
+        {
+            RES(5, E_);
+            break;
+        }
+        case 0xCBAC:
+        {
+            RES(5, H_);
+            break;
+        }
+        case 0xCBAD:
+        {
+            RES(5, L_);
+            break;
+        }
+        case 0xCBAE:
+        {
+            RES(5, Address(HL()));
+            break;
+        }
+        case 0xCBAF:
+        {
+            RES(5, A_);
+            break;
+        }
+        case 0xCBB0:
+        {
+            RES(6, B_);
+            break;
+        }
+        case 0xCBB1:
+        {
+            RES(6, C_);
+            break;
+        }
+        case 0xCBB2:
+        {
+            RES(6, D_);
+            break;
+        }
+        case 0xCBB3:
+        {
+            RES(6, E_);
+            break;
+        }
+        case 0xCBB4:
+        {
+            RES(6, H_);
+            break;
+        }
+        case 0xCBB5:
+        {
+            RES(6, L_);
+            break;
+        }
+        case 0xCBB6:
+        {
+            RES(6, Address(HL()));
+            break;
+        }
+        case 0xCBB7:
+        {
+            RES(6, A_);
+            break;
+        }
+        case 0xCBB8:
+        {
+            RES(7, B_);
+            break;
+        }
+        case 0xCBB9:
+        {
+            RES(7, C_);
+            break;
+        }
+        case 0xCBBA:
+        {
+            RES(7, D_);
+            break;
+        }
+        case 0xCBBB:
+        {
+            RES(7, E_);
+            break;
+        }
+        case 0xCBBC:
+        {
+            RES(7, H_);
+            break;
+        }
+        case 0xCBBD:
+        {
+            RES(7, L_);
+            break;
+        }
+        case 0xCBBE:
+        {
+            RES(7, Address(HL()));
+            break;
+        }
+        case 0xCBBF:
+        {
+            RES(7, A_);
+            break;
+        }
+        case 0xCBC0:
+        {
+            SET(0, B_);
+            break;
+        }
+        case 0xCBC1:
+        {
+            SET(0, C_);
+            break;
+        }
+        case 0xCBC2:
+        {
+            SET(0, D_);
+            break;
+        }
+        case 0xCBC3:
+        {
+            SET(0, E_);
+            break;
+        }
+        case 0xCBC4:
+        {
+            SET(0, H_);
+            break;
+        }
+        case 0xCBC5:
+        {
+            SET(0, L_);
+            break;
+        }
+        case 0xCBC6:
+        {
+            SET(0, Address(HL()));
+            break;
+        }
+        case 0xCBC7:
+        {
+            SET(0, A_);
+            break;
+        }
+        case 0xCBC8:
+        {
+            SET(1, B_);
+            break;
+        }
+        case 0xCBC9:
+        {
+            SET(1, C_);
+            break;
+        }
+        case 0xCBCA:
+        {
+            SET(1, D_);
+            break;
+        }
+        case 0xCBCB:
+        {
+            SET(1, E_);
+            break;
+        }
+        case 0xCBCC:
+        {
+            SET(1, H_);
+            break;
+        }
+        case 0xCBCD:
+        {
+            SET(1, L_);
+            break;
+        }
+        case 0xCBCE:
+        {
+            SET(1, Address(HL()));
+            break;
+        }
+        case 0xCBCF:
+        {
+            SET(1, A_);
+            break;
+        }
+        case 0xCBD0:
+        {
+            SET(2, B_);
+            break;
+        }
+        case 0xCBD1:
+        {
+            SET(2, C_);
+            break;
+        }
+        case 0xCBD2:
+        {
+            SET(2, D_);
+            break;
+        }
+        case 0xCBD3:
+        {
+            SET(2, E_);
+            break;
+        }
+        case 0xCBD4:
+        {
+            SET(2, H_);
+            break;
+        }
+        case 0xCBD5:
+        {
+            SET(2, L_);
+            break;
+        }
+        case 0xCBD6:
+        {
+            SET(2, Address(HL()));
+            break;
+        }
+        case 0xCBD7:
+        {
+            SET(2, A_);
+            break;
+        }
+        case 0xCBD8:
+        {
+            SET(3, B_);
+            break;
+        }
+        case 0xCBD9:
+        {
+            SET(3, C_);
+            break;
+        }
+        case 0xCBDA:
+        {
+            SET(3, D_);
+            break;
+        }
+        case 0xCBDB:
+        {
+            SET(3, E_);
+            break;
+        }
+        case 0xCBDC:
+        {
+            SET(3, H_);
+            break;
+        }
+        case 0xCBDD:
+        {
+            SET(3, L_);
+            break;
+        }
+        case 0xCBDE:
+        {
+            SET(3, Address(HL()));
+            break;
+        }
+        case 0xCBDF:
+        {
+            SET(3, A_);
+            break;
+        }
+        case 0xCBE0:
+        {
+            SET(4, B_);
+            break;
+        }
+        case 0xCBE1:
+        {
+            SET(4, C_);
+            break;
+        }
+        case 0xCBE2:
+        {
+            SET(4, D_);
+            break;
+        }
+        case 0xCBE3:
+        {
+            SET(4, E_);
+            break;
+        }
+        case 0xCBE4:
+        {
+            SET(4, H_);
+            break;
+        }
+        case 0xCBE5:
+        {
+            SET(4, L_);
+            break;
+        }
+        case 0xCBE6:
+        {
+            SET(4, Address(HL()));
+            break;
+        }
+        case 0xCBE7:
+        {
+            SET(4, A_);
+            break;
+        }
+        case 0xCBE8:
+        {
+            SET(5, B_);
+            break;
+        }
+        case 0xCBE9:
+        {
+            SET(5, C_);
+            break;
+        }
+        case 0xCBEA:
+        {
+            SET(5, D_);
+            break;
+        }
+        case 0xCBEB:
+        {
+            SET(5, E_);
+            break;
+        }
+        case 0xCBEC:
+        {
+            SET(5, H_);
+            break;
+        }
+        case 0xCBED:
+        {
+            SET(5, L_);
+            break;
+        }
+        case 0xCBEE:
+        {
+            SET(5, Address(HL()));
+            break;
+        }
+        case 0xCBEF:
+        {
+            SET(5, A_);
+            break;
+        }
+        case 0xCBF0:
+        {
+            SET(6, B_);
+            break;
+        }
+        case 0xCBF1:
+        {
+            SET(6, C_);
+            break;
+        }
+        case 0xCBF2:
+        {
+            SET(6, D_);
+            break;
+        }
+        case 0xCBF3:
+        {
+            SET(6, E_);
+            break;
+        }
+        case 0xCBF4:
+        {
+            SET(6, H_);
+            break;
+        }
+        case 0xCBF5:
+        {
+            SET(6, L_);
+            break;
+        }
+        case 0xCBF6:
+        {
+            SET(6, Address(HL()));
+            break;
+        }
+        case 0xCBF7:
+        {
+            SET(6, A_);
+            break;
+        }
+        case 0xCBF8:
+        {
+            SET(7, B_);
+            break;
+        }
+        case 0xCBF9:
+        {
+            SET(7, C_);
+            break;
+        }
+        case 0xCBFA:
+        {
+            SET(7, D_);
+            break;
+        }
+        case 0xCBFB:
+        {
+            SET(7, E_);
+            break;
+        }
+        case 0xCBFC:
+        {
+            SET(7, H_);
+            break;
+        }
+        case 0xCBFD:
+        {
+            SET(7, L_);
+            break;
+        }
+        case 0xCBFE:
+        {
+            SET(7, Address(HL()));
+            break;
+        }
+        case 0xCBFF:
+        {
+            SET(7, A_);
+            break;
+        }
         default: throw OpcodeNotImplementedException(opcode);
     }
 }
@@ -1591,9 +2871,9 @@ void Cpu::ADD(RegisterPairView regPair, std::uint16_t shift) noexcept
     std::uint16_t const oldValue = regPair();
     std::uint32_t const result   = (oldValue + shift);
 
-    HL_.lower() = (result & 0xFF);
+    regPair.lower() = (result & 0xFF);
     tick();
-    HL_.upper() = ((result >> 8) & 0xFF);
+    regPair.upper() = ((result >> 8) & 0xFF);
     F_.setFlag(Flag::NEGATIVE, false);
     F_.setFlag(Flag::HALF_CARRY, (((oldValue & 0x0FFF) + (shift & 0x0FFF)) & 0x1000) != 0);
     F_.setFlag(Flag::CARRY, (result & 0x10000) != 0);
@@ -1671,7 +2951,7 @@ void Cpu::OR(ByteRegister& reg, std::uint8_t value) noexcept
     F_.setFlag(Flag::CARRY, false);
 }
 
-void Cpu::CP(ByteRegister& reg, std::uint8_t shift) noexcept
+void Cpu::CP(ByteRegister const& reg, std::uint8_t shift) noexcept
 {
     std::uint8_t const oldValue = reg();
     std::uint8_t const result   = (oldValue - shift);
@@ -1799,6 +3079,214 @@ void Cpu::RST(std::uint8_t value) noexcept
     write(addrLo, PC_.lower());
 
     PC_ = value;
+}
+
+void Cpu::RLC(ByteRegister& reg) noexcept
+{
+    std::uint8_t const value  = reg();
+    std::uint8_t const carry  = (value & 0x80);
+    std::uint8_t const result = ((value << 1) | (carry >> 7));
+
+    reg = result;
+    F_.setFlag(Flag::ZERO, result == 0);
+    F_.setFlag(Flag::NEGATIVE, false);
+    F_.setFlag(Flag::HALF_CARRY, false);
+    F_.setFlag(Flag::CARRY, carry != 0);
+}
+
+void Cpu::RLC(Address address) noexcept
+{
+    auto reg = ByteRegister(read(address));
+    RLC(reg);
+    write(address, reg());
+}
+
+void Cpu::RRC(ByteRegister& reg) noexcept
+{
+    std::uint8_t const value  = reg();
+    std::uint8_t const carry  = (value & 0x01);
+    std::uint8_t const result = ((value >> 1) | (carry << 7));
+
+    reg = result;
+    F_.setFlag(Flag::ZERO, result == 0);
+    F_.setFlag(Flag::NEGATIVE, false);
+    F_.setFlag(Flag::HALF_CARRY, false);
+    F_.setFlag(Flag::CARRY, carry != 0);
+}
+
+void Cpu::RRC(Address address) noexcept
+{
+    auto reg = ByteRegister(read(address));
+    RRC(reg);
+    write(address, reg());
+}
+
+void Cpu::RL(ByteRegister& reg) noexcept
+{
+    std::uint8_t const value  = reg();
+    std::uint8_t const carry  = (value & 0x80);
+    std::uint8_t const result = ((value << 1) | F_.isSet(Flag::CARRY));
+
+    reg = result;
+    F_.setFlag(Flag::ZERO, result == 0);
+    F_.setFlag(Flag::NEGATIVE, false);
+    F_.setFlag(Flag::HALF_CARRY, false);
+    F_.setFlag(Flag::CARRY, carry != 0);
+}
+
+void Cpu::RL(Address address) noexcept
+{
+    auto reg = ByteRegister(read(address));
+    RL(reg);
+    write(address, reg());
+}
+
+void Cpu::RR(ByteRegister& reg) noexcept
+{
+    std::uint8_t const value  = reg();
+    std::uint8_t const carry  = (value & 0x01);
+    std::uint8_t const result = ((value >> 1) | (F_.isSet(Flag::CARRY) << 7));
+
+    reg = result;
+    F_.setFlag(Flag::ZERO, result == 0);
+    F_.setFlag(Flag::NEGATIVE, false);
+    F_.setFlag(Flag::HALF_CARRY, false);
+    F_.setFlag(Flag::CARRY, carry != 0);
+}
+
+void Cpu::RR(Address address) noexcept
+{
+    auto reg = ByteRegister(read(address));
+    RR(reg);
+    write(address, reg());
+}
+
+void Cpu::SLA(ByteRegister& reg) noexcept
+{
+    std::uint8_t const value  = reg();
+    std::uint8_t const carry  = (value & 0x80);
+    std::uint8_t const result = (value << 1);
+
+    reg = result;
+    F_.setFlag(Flag::ZERO, result == 0);
+    F_.setFlag(Flag::NEGATIVE, false);
+    F_.setFlag(Flag::HALF_CARRY, false);
+    F_.setFlag(Flag::CARRY, carry != 0);
+}
+
+void Cpu::SLA(Address address) noexcept
+{
+    auto reg = ByteRegister(read(address));
+    SLA(reg);
+    write(address, reg());
+}
+
+void Cpu::SRA(ByteRegister& reg) noexcept
+{
+    std::uint8_t const value  = reg();
+    std::uint8_t const carry  = (value & 0x01);
+    std::uint8_t const b7     = (value & 0x80);
+    std::uint8_t const result = ((value >> 1) | b7);
+
+    reg = result;
+    F_.setFlag(Flag::ZERO, result == 0);
+    F_.setFlag(Flag::NEGATIVE, false);
+    F_.setFlag(Flag::HALF_CARRY, false);
+    F_.setFlag(Flag::CARRY, carry != 0);
+}
+
+void Cpu::SRA(Address address) noexcept
+{
+    auto reg = ByteRegister(read(address));
+    SRA(reg);
+    write(address, reg());
+}
+
+void Cpu::SWAP(ByteRegister& reg) noexcept
+{
+    std::uint8_t const value  = reg();
+    std::uint8_t const result = (((value & 0xF0) >> 4) | ((value & 0x0F) << 4));
+
+    reg = result;
+    F_.setFlag(Flag::ZERO, result == 0);
+    F_.setFlag(Flag::NEGATIVE, false);
+    F_.setFlag(Flag::HALF_CARRY, false);
+    F_.setFlag(Flag::CARRY, false);
+}
+
+void Cpu::SWAP(Address address) noexcept
+{
+    auto reg = ByteRegister(read(address));
+    SWAP(reg);
+    write(address, reg());
+}
+
+void Cpu::SRL(ByteRegister& reg) noexcept
+{
+    std::uint8_t const value  = reg();
+    std::uint8_t const carry  = (value & 0x01);
+    std::uint8_t const result = (value >> 1);
+
+    reg = result;
+    F_.setFlag(Flag::ZERO, result == 0);
+    F_.setFlag(Flag::NEGATIVE, false);
+    F_.setFlag(Flag::HALF_CARRY, false);
+    F_.setFlag(Flag::CARRY, carry != 0);
+}
+
+void Cpu::SRL(Address address) noexcept
+{
+    auto reg = ByteRegister(read(address));
+    SRL(reg);
+    write(address, reg());
+}
+
+void Cpu::BIT(int bit, ByteRegister const& reg) noexcept
+{
+    assert((bit >= 0) && (bit <= 7));
+    std::uint8_t const value = reg();
+
+    F_.setFlag(Flag::ZERO, ((value & (1u << bit)) == 0));
+    F_.setFlag(Flag::NEGATIVE, false);
+    F_.setFlag(Flag::HALF_CARRY, true);
+}
+
+void Cpu::BIT(int bit, Address address) noexcept
+{
+    auto const reg = ByteRegister(read(address));
+    BIT(bit, reg);
+}
+
+void Cpu::RES(int bit, ByteRegister& reg) const noexcept
+{
+    assert((bit >= 0) && (bit <= 7));
+    std::uint8_t const value  = reg();
+    std::uint8_t const result = (value & ~(1u << bit));
+
+    reg = result;
+}
+
+void Cpu::RES(int bit, Address address) noexcept
+{
+    auto reg = ByteRegister(read(address));
+    RES(bit, reg);
+    write(address, reg());
+}
+
+void Cpu::SET(int bit, ByteRegister& reg) const noexcept
+{
+    assert((bit >= 0) && (bit <= 7));
+    std::uint8_t const value  = reg();
+    std::uint8_t const result = (value | (1u << bit));
+
+    reg = result;
+}
+
+void Cpu::SET(int bit, Address address) noexcept
+{
+    auto reg = ByteRegister(read(address));
+    SET(bit, reg);
+    write(address, reg());
 }
 
 void Cpu::setOnTickCallback(OnTickCallback callback)

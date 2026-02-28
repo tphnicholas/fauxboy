@@ -116,7 +116,7 @@ private:
 
     void OR(ByteRegister& reg, std::uint8_t value) noexcept;
 
-    void CP(ByteRegister& reg, std::uint8_t shift) noexcept;
+    void CP(ByteRegister const& reg, std::uint8_t shift) noexcept;
 
     void JR(bool shouldBranch) noexcept;
     void JR() noexcept;
@@ -135,6 +135,39 @@ private:
     void PUSH(RegisterPairView regPair) noexcept;
 
     void RST(std::uint8_t value) noexcept;
+
+    void RLC(ByteRegister& reg) noexcept;
+    void RLC(Address address) noexcept;
+
+    void RRC(ByteRegister& reg) noexcept;
+    void RRC(Address address) noexcept;
+
+    void RL(ByteRegister& reg) noexcept;
+    void RL(Address address) noexcept;
+
+    void RR(ByteRegister& reg) noexcept;
+    void RR(Address address) noexcept;
+
+    void SLA(ByteRegister& reg) noexcept;
+    void SLA(Address address) noexcept;
+
+    void SRA(ByteRegister& reg) noexcept;
+    void SRA(Address address) noexcept;
+
+    void SWAP(ByteRegister& reg) noexcept;
+    void SWAP(Address address) noexcept;
+
+    void SRL(ByteRegister& reg) noexcept;
+    void SRL(Address address) noexcept;
+
+    void BIT(int bit, ByteRegister const& reg) noexcept;
+    void BIT(int bit, Address address) noexcept;
+
+    void RES(int bit, ByteRegister& reg) const noexcept;
+    void RES(int bit, Address address) noexcept;
+
+    void SET(int bit, ByteRegister& reg) const noexcept;
+    void SET(int bit, Address address) noexcept;
 
 public:
     explicit Cpu(Bus* bus) noexcept;
